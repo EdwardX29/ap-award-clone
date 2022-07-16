@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import './InfoForm.css'
-
+import Accorn from '../assets/accorn.svg'
 export default function InfoForm() {
 
     // const [submitted, setSubmitted] = useState(false)
@@ -10,40 +10,42 @@ export default function InfoForm() {
 
 
     return (
-        <div className="InfoForm">
+        <div className="">
 
             <h1>Create your own award</h1>
+            <div className="InfoFormContainer">
 
-            <form
-            onSubmit={(e) => e.preventDefault()}
-        >
-            <label id="nameInputLabel" htmlFor="nameInput">Enter your name</label>
-            <input 
-                type="text" name="nameInput" required
-                value={name}
-                onChange={(e) => setName(e.target.value)} 
-            />
+                <img className="cbAccorn" src={Accorn} />
 
-            <label htmlFor="dateInput">Date</label>
-            <input
-                type="date" name="dateInput" required
-                onChange={(e) => setDate(e.target.value)}
-                />
+                <form className="InfoForm"
+                onSubmit={(e) => e.preventDefault()}
+                >
+                    <label id="nameInputLabel" htmlFor="nameInput">Enter your name</label>
+                    <input 
+                        type="text" name="nameInput" required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)} 
+                    />
 
-            <label htmlFor="awardSelection">Award Type</label>
-            <select 
-                name="awardSelection" id="awardSelection" required
-                value={awardType} onChange={(e) => setAwardType(e.target.value)}
-            >
-                <option value="AP Scholar">AP Scholar</option>
-                <option value="AP Scholar with Honor">AP Scholar with Honor</option>
-                <option value="AP Scholar with Distinction">AP Scholar with Distinction</option>
-            </select>
-            
-            <input type="submit" value="submit"/>
-            
-        </form>
+                    <label htmlFor="dateInput">Date</label>
+                    <input
+                        type="date" name="dateInput" required
+                        onChange={(e) => setDate(e.target.value)}
+                        />
 
+                    <label htmlFor="awardSelection">Award Type</label>
+                    <select 
+                        name="awardSelection" id="awardSelection" required
+                        value={awardType} onChange={(e) => setAwardType(e.target.value)}
+                    >
+                        <option value="AP Scholar">AP Scholar</option>
+                        <option value="AP Scholar with Honor">AP Scholar with Honor</option>
+                        <option value="AP Scholar with Distinction">AP Scholar with Distinction</option>
+                    </select>
+                    
+                    <input type="submit" value="submit"/>
+            </form>
+        </div>
 
         </div>
 
