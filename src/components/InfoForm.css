@@ -61,7 +61,7 @@ input[type=submit] {
     padding: 15px 25px;
     border-radius:25px;
     color:white;
-    margin-top: 2rem;
+    margin-top: 3rem;
     font-size: 0.9em;
     font-weight:600;
     transition: background-color 0.1s ease-in 0s;
@@ -77,4 +77,12 @@ input[type=submit]:focus {
     border: solid 1px;
     background-color:#324dc7; 
     box-shadow: 0 0 0 2px #324dc7;
+}
+
+select {
+    width:100%;
+    border-radius:5px;
+    text-align: center;
+    padding: 10px 0;
+    font-size:1em;
 }

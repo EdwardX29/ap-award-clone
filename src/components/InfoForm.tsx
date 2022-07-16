@@ -1,26 +1,28 @@
 import React, {useState} from "react"
 import './InfoForm.css'
 import Accorn from '../assets/accorn.svg'
+import Award from './Award';
+
 export default function InfoForm() {
 
-    // const [submitted, setSubmitted] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
     const [name, setName] = useState("")
     const [awardType, setAwardType] = useState("AP Scholar")
     const [date,  setDate] = useState("")
 
 
-    return (
-        <div className="">
-
+    return (!submitted ? 
+        (<div className="">
             <h1>Create your own award</h1>
             <div className="InfoFormContainer">
-
                 <img className="cbAccorn" src={Accorn} />
                 <h3>Info for certificate</h3>
                 <form className="InfoForm"
-                onSubmit={(e) => e.preventDefault()}
-                >
-
+                onSubmit={(e) => {
+                    e.preventDefault()
+                    setSubmitted(true);
+                    }
+                }>
                     <div className="input-div">
                         <label id="nameInputLabel" htmlFor="nameInput">Enter your name</label>
                         <input 
@@ -47,22 +49,12 @@ export default function InfoForm() {
                             <option value="AP Scholar with Distinction">AP Scholar with Distinction</option>
                         </select>
                     </div>
-
-                   
-                    
-
-                    
-                    
                     <input type="submit" value="Next"/>
-
             </form>
         </div>
+        </div>) :
 
-        </div>
-
-        
-
-      
+        <Award />
 
     )
 
