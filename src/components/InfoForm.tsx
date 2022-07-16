@@ -16,34 +16,45 @@ export default function InfoForm() {
             <div className="InfoFormContainer">
 
                 <img className="cbAccorn" src={Accorn} />
-
+                <h3>Info for certificate</h3>
                 <form className="InfoForm"
                 onSubmit={(e) => e.preventDefault()}
                 >
-                    <label id="nameInputLabel" htmlFor="nameInput">Enter your name</label>
-                    <input 
-                        type="text" name="nameInput" required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)} 
-                    />
 
-                    <label htmlFor="dateInput">Date</label>
-                    <input
-                        type="date" name="dateInput" required
-                        onChange={(e) => setDate(e.target.value)}
+                    <div className="input-div">
+                        <label id="nameInputLabel" htmlFor="nameInput">Enter your name</label>
+                        <input 
+                            type="text" name="nameInput" required
+                            value={name}
+                            onChange={(e) => setName(e.target.value)} 
                         />
+                    </div>
+                    <div className="input-div">
+                        <label htmlFor="dateInput">Date</label>
+                        <input
+                            type="date" name="dateInput" required
+                            onChange={(e) => setDate(e.target.value)}
+                        />
+                    </div>
+                    <div className="input-div">
+                        <label htmlFor="awardSelection">Award Type</label>
+                        <select 
+                            name="awardSelection" id="awardSelection" required
+                            value={awardType} onChange={(e) => setAwardType(e.target.value)}
+                        >
+                            <option value="AP Scholar">AP Scholar</option>
+                            <option value="AP Scholar with Honor">AP Scholar with Honor</option>
+                            <option value="AP Scholar with Distinction">AP Scholar with Distinction</option>
+                        </select>
+                    </div>
 
-                    <label htmlFor="awardSelection">Award Type</label>
-                    <select 
-                        name="awardSelection" id="awardSelection" required
-                        value={awardType} onChange={(e) => setAwardType(e.target.value)}
-                    >
-                        <option value="AP Scholar">AP Scholar</option>
-                        <option value="AP Scholar with Honor">AP Scholar with Honor</option>
-                        <option value="AP Scholar with Distinction">AP Scholar with Distinction</option>
-                    </select>
+                   
                     
-                    <input type="submit" value="submit"/>
+
+                    
+                    
+                    <input type="submit" value="Next"/>
+
             </form>
         </div>
 
