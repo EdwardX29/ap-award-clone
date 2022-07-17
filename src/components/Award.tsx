@@ -9,6 +9,13 @@ import { motion } from "framer-motion"
 import './Award.css'
 
 export default function Award(props:any) {
+    // console.log(props)
+    const setSubmitted = props.setSubmitted
+
+    // setInterval(()=>{
+    //     setSubmitted(false)
+        
+    // }, 500)
 
     const name = props.name
     const date = props.date
@@ -45,10 +52,14 @@ export default function Award(props:any) {
           return months[newDate.getMonth()] + " " + newDate.getDate() + ", " + newDate.getFullYear()
     }
 
+    const revertSubmission = () => {
+        console.log("button clicked to go back")
+        setSubmitted(false)
+    }
 
     return (
+        <>
         <div className="awardContainer">
-
             <motion.div
                 drag 
                 dragConstraints={{
@@ -57,11 +68,14 @@ export default function Award(props:any) {
                     right:200,
                     bottom:50,
                 }}
-    
                 className="name"
                 >{name}</motion.div>
-            <p className="date">{formatDate(date)}</p>
+            <p onClick={() => console.log("clicked")}className="date">{formatDate(date)}</p>
             <img className="awardImage" src={image} />
         </div>
+        <button>Download</button>
+        <div onClick={()=> revertSubmission()}>Go back</div>
+        </>
+
         )
 }
