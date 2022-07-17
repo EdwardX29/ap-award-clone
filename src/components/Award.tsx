@@ -54,7 +54,7 @@ export default function Award(props:any) {
                 dragConstraints={{
                     top:-50,
                     left:-50,
-                    right:50,
+                    right:200,
                     bottom:50,
                 }}
     
