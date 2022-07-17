@@ -3,6 +3,7 @@ import Blank from '../assets/award-blank.png'
 import Normal from '../assets/AwardsNormal.png'
 import Distinction from '../assets/AwardsDistinction.png'
 import Honor from '../assets/AwardsHonor.jpeg'
+import { motion } from "framer-motion"
 
 
 import './Award.css'
@@ -48,7 +49,17 @@ export default function Award(props:any) {
     return (
         <div className="awardContainer">
 
-            <p className="name">{name}</p>
+            <motion.div
+                drag 
+                dragConstraints={{
+                    top:-50,
+                    left:-50,
+                    right:50,
+                    bottom:50,
+                }}
+    
+                className="name"
+                >{name}</motion.div>
             <p className="date">{formatDate(date)}</p>
             <img className="awardImage" src={image} />
         </div>

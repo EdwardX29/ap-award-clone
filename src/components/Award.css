@@ -26,6 +26,7 @@
 }
 
 .name {
+    overflow:hidden;
     position:absolute;
     z-index:1;
     top:140px;
