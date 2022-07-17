@@ -1,0 +1,40 @@
+.awardContainer {
+    text-align:left!important;
+    overflow: hidden;
+}
+
+.awardContainer * {
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin: 0 auto;
+
+}
+
+.awardImage {
+    position:absolute;
+    /* width:550px;  */
+    /* height:425px; */
+    width:50%; 
+    height:auto;
+    /* width:calc(550px * 2); */
+    /* aspect-ratio:22/17; */
+    object-fit: cover;
+}
+
+.name {
+    position:absolute;
+    z-index:1;
+    top: 20%;
+    left: calc(41% - 0.5%);
+}
+
+.date {
+    position: absolute;
+    z-index:1;
+    top:65%;
+    left:30%;
+}
+
+/*  1100 850 */

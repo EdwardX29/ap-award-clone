@@ -25,12 +25,32 @@ export default function Award(props:any) {
         image = Distinction
     }
 
+    const formatDate = (_date:string) => {
+        const newDate = new Date(_date)
+        const months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+          ]
+          return months[newDate.getMonth()] + " " + newDate.getDate() + ", " + newDate.getFullYear()
+    }
+
 
     return (
-        <>
-            <p>{name}</p>
-            <p>{date}</p>
-            <img src={image} />
-        </>
+        <div className="awardContainer">
+
+            <p className="name">{name}</p>
+            <p className="date">{formatDate(date)}</p>
+            <img className="awardImage" src={image} />
+        </div>
         )
 }
