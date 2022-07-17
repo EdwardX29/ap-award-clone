@@ -54,7 +54,7 @@ export default function InfoForm() {
         </div>
         </div>) :
 
-        <Award />
+        <Award name={name} date={date} awardType={awardType}/>
 
     )
 
