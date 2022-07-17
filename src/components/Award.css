@@ -29,7 +29,18 @@
     font-size:1.5em;
     width:300px;
     height:100px;
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
 }
+
+.name:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
 
 .date {
     width:300px;
@@ -42,5 +53,42 @@
     font-weight:600;
     font-size:1em;
 }
+
+
+.btn {
+    display:flex;
+    place-items:center;
+    margin: 15px auto;
+    border:none;
+    background-color:#324dc7;
+    padding: 15px 25px;
+    border-radius:25px;
+    color:white;
+    margin-top: 3rem;
+    font-size: 0.9em;
+    font-weight:600;
+    transition: background-color 0.1s ease-in 0s;
+    
+}
+
+.btn:hover {
+    background-color:#192764;
+}
+
+.btn:focus {
+    background:none;
+    border-color:white!important;
+    border: solid 1px;
+    background-color:#324dc7; 
+    box-shadow: 0 0 0 2px #324dc7;
+}
+
+.btn img {
+    width: 35px;
+    height:35px;
+    margin:0 5px;
+    filter : invert(100%) sepia(100%) saturate(0%) hue-rotate(165deg) brightness(105%) contrast(102%);
+}
+
 
 /*  1100 850 */

@@ -3,19 +3,16 @@ import Blank from '../assets/award-blank.png'
 import Normal from '../assets/AwardsNormal.png'
 import Distinction from '../assets/AwardsDistinction.png'
 import Honor from '../assets/AwardsHonor.jpeg'
+import BackArrow from '../assets/back-arrow.png' 
+import Download from '../assets/download.png'
+
 import { motion } from "framer-motion"
 
 
 import './Award.css'
 
 export default function Award(props:any) {
-    // console.log(props)
     const setSubmitted = props.setSubmitted
-
-    // setInterval(()=>{
-    //     setSubmitted(false)
-        
-    // }, 500)
 
     const name = props.name
     const date = props.date
@@ -73,8 +70,12 @@ export default function Award(props:any) {
             <p onClick={() => console.log("clicked")}className="date">{formatDate(date)}</p>
             <img className="awardImage" src={image} />
         </div>
-        <button>Download</button>
-        <div onClick={()=> revertSubmission()}>Go back</div>
+        <button className="btn" id="downloadBtn">
+            <img src={Download} / >Download
+        </button>
+        <button className="btn" id="backBtn" onClick={()=> revertSubmission()}>
+            <img src={BackArrow} />Go back 
+        </button>
         </>
 
         )
