@@ -29,6 +29,7 @@ export default function InfoForm() {
                             type="text" name="nameInput" required
                             value={name}
                             onChange={(e) => setName(e.target.value)} 
+                            autoComplete="off"
                         />
                     </div>
                     <div className="input-div">

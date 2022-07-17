@@ -1,5 +1,4 @@
-import React from 'react';
-import Blank from '../assets/award-blank.png'
+import React, {useRef} from 'react'
 import Normal from '../assets/AwardsNormal.png'
 import Distinction from '../assets/AwardsDistinction.png'
 import Honor from '../assets/AwardsHonor.jpeg'
@@ -7,7 +6,7 @@ import BackArrow from '../assets/back-arrow.png'
 import Download from '../assets/download.png'
 
 import { motion } from "framer-motion"
-
+import exportAsImage from './exportAsImage'
 
 import './Award.css'
 
@@ -54,9 +53,11 @@ export default function Award(props:any) {
         setSubmitted(false)
     }
 
+    const exportRef = useRef();
+
     return (
         <>
-        <div className="awardContainer">
+        <div className="awardContainer" ref={exportRef}>
             <motion.div
                 drag 
                 dragConstraints={{
@@ -70,7 +71,7 @@ export default function Award(props:any) {
             <p onClick={() => console.log("clicked")}className="date">{formatDate(date)}</p>
             <img className="awardImage" src={image} />
         </div>
-        <button className="btn" id="downloadBtn">
+        <button className="btn" id="downloadBtn" onClick={() => exportAsImage(exportRef.current, awardType+" - " + name)}>
             <img src={Download} / >Download
         </button>
         <button className="btn" id="backBtn" onClick={()=> revertSubmission()}>
