@@ -53,7 +53,7 @@ export default function Award(props:any) {
         setSubmitted(false)
     }
 
-    const exportRef = useRef();
+    const exportRef = useRef(null);
 
     return (
         <>
@@ -71,6 +71,8 @@ export default function Award(props:any) {
             <p onClick={() => console.log("clicked")}className="date">{formatDate(date)}</p>
             <img className="awardImage" src={image} />
         </div>
+
+        <p className="tip">Tip: You can move your name if it is not aligned correctly</p>
         <button className="btn" id="downloadBtn" onClick={() => exportAsImage(exportRef.current, awardType+" - " + name)}>
             <img src={Download} / >Download
         </button>
