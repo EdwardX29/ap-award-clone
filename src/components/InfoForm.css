@@ -3,7 +3,9 @@
     border-radius:24px;
     box-shadow:0 0 12px rgb(0 0 0 / 10%);
     display:inline-block;
-    width:325px;
+    /* width:325px; */
+    width:50%;
+    max-width:325px;
     margin: 0;
     padding:2em 3em;
 
@@ -12,6 +14,21 @@
 .InfoFormContainer h3 {
     margin: 0 0 25px 0;
 }
+
+@media screen and (max-width:500px){
+    .InfoFormContainer {
+        /* width:225px; */
+        padding: 1.5em 2.5em;
+    }
+}
+/* @media screen and (max-width:400px){
+    .InfoFormContainer {
+        width:225px;
+        padding: 1em 2em;
+    }
+} */
+
+
 
 .InfoForm {
     text-align:left;
