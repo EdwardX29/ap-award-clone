@@ -60,19 +60,17 @@ export default function Award(props:any) {
         <div className="awardContainer" ref={exportRef}>
             <motion.div
                 drag 
-                dragConstraints={{
-                    top:-50,
-                    left:-50,
-                    right:200,
-                    bottom:50,
-                }}
                 className="name"
                 >{name}</motion.div>
-            <p onClick={() => console.log("clicked")}className="date">{formatDate(date)}</p>
+            <motion.div 
+                drag
+                className="date">
+                {formatDate(date)}
+            </motion.div>
             <img className="awardImage" src={image} />
         </div>
 
-        <p className="tip">Tip: You can move your name if it is not aligned correctly</p>
+        <p className="tip">Tip: You can drag the name and date!</p>
         <button className="btn" id="downloadBtn" onClick={() => exportAsImage(exportRef.current, awardType+" - " + name)}>
             <img src={Download} / >Download
         </button>
