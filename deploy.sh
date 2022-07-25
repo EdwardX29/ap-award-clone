@@ -1,1 +1,1 @@
-npm run build && git add . && git add -f dist && git commit -m "re-add width/height from name&date" && git push origin && git subtree push --prefix dist origin gh-pages
+npm run build && git add . && git add -f dist && git commit -m "redeploy" && git push origin && git subtree push --prefix dist origin gh-pages
