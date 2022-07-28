@@ -33,7 +33,7 @@ Website that creates AP Scholar Awards based on user input. Built with React, Ty
 
 ## How To Use
 Enter the information you want displayed on your fake certificate   
-[How-To Image](https://raw.githubusercontent.com/EdwardX29/ap-award-clone/main/.github/images/how-to.png)
+![How-To Image](https://raw.githubusercontent.com/EdwardX29/ap-award-clone/main/.github/images/how-to.png)
 
 #### Installation
 
