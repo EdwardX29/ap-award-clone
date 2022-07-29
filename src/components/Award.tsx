@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import  {useState, useRef} from 'react'
 import Normal from '../assets/AwardsNormal.png'
 import Distinction from '../assets/AwardsDistinction.png'
 import Honor from '../assets/AwardsHonor.jpeg'
@@ -16,6 +16,10 @@ export default function Award(props:any) {
     const name = props.name
     const date = props.date
     const awardType = props.awardType
+
+    const [fontSizeOne, setFontOne] = useState(2)
+    const [fontSizeTwo, setFontTwo] = useState(2)
+
 
     let image;
     
@@ -61,17 +65,31 @@ export default function Award(props:any) {
             <motion.div
                 drag 
                 className="name"
+                style={{fontSize: fontSizeOne + "rem"}}
                 >{name}</motion.div>
             <motion.div 
                 drag
-                className="date">
+                className="date"
+                style={{fontSize: fontSizeTwo + "rem"}}
+            >
                 {formatDate(date)}
             </motion.div>
             <img className="awardImage" src={image} />
         </div>
 
-        <p className="tip">Tip: You can drag the name and date!</p>
-        <button className="btn" id="downloadBtn" onClick={() => exportAsImage(exportRef.current, awardType+" - " + name)}>
+        <p className="tip">Tip: You can drag the name and date! Even change the font size with sliders!</p>
+        <div className="slidecontainer">
+            <label htmlFor="fontOne">Name size:</label>
+            <input type="range" min="1" max="5" value={fontSizeOne} 
+                onChange={(e) => setFontOne(parseInt(e.currentTarget.value))}
+                className="slider" id="fontOne" />
+            <label htmlFor="fontTwo">Date size:</label>
+            <input type="range" min="1" max="5" value={fontSizeTwo} 
+                onChange={(e) => setFontTwo(parseInt(e.currentTarget.value))}
+                className="slider" id="fontTwo" />
+
+        </div>
+        <button className="btn" id="downloadBtn" onClick={() => exportAsImage(exportRef.current, awardType)}>
             <img src={Download} / >Download
         </button>
         <button className="btn" id="backBtn" onClick={()=> revertSubmission()}>
