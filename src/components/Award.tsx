@@ -1,4 +1,4 @@
-import  {useState, useRef} from 'react'
+import  React, {useState, useRef} from 'react'
 import Normal from '../assets/AwardsNormal.png'
 import Distinction from '../assets/AwardsDistinction.png'
 import Honor from '../assets/AwardsHonor.jpeg'
